@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "408089889834",
+    "project_id": "chatgtp-mini",
+    "storage_bucket": "chatgtp-mini.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:408089889834:android:ea9e67713b0e5233988753",
+        "android_client_info": {
+          "package_name": "com.chatgptmini.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPd_FKjWxAP_uDcATQ5yH4q9RmfLKGfhQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
