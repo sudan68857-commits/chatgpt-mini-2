@@ -1,47 +1,34 @@
 package com.chatgptmini.app
 
 import android.os.Bundle
-import android.widget.*
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var chatBox: LinearLayout
-    private lateinit var input: EditText
+    private lateinit var messageInput: EditText
+    private lateinit var sendButton: Button
+    private lateinit var chatText: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        chatBox = findViewById(R.id.chatBox)
-        input = findViewById(R.id.input)
-
-        val sendButton = findViewById<Button>(R.id.sendButton)
+        messageInput = findViewById(R.id.messageInput)
+        sendButton = findViewById(R.id.sendButton)
+        chatText = findViewById(R.id.chatText)
 
         sendButton.setOnClickListener {
-            val message = input.text.toString().trim()
+            val message = messageInput.text.toString().trim()
 
-            if (message.isNotEmpty()) {
-                addMessage("You", message)
+            if (message.isEmpty()) return@setOnClickListener
 
-                input.text.clear()
+            chatText.append("\nYou: $message\n")
+            messageInput.text.clear()
 
-                // Gemini connection will be added next.
-                addMessage(
-                    "Mini",
-                    "I'm ready! Gemini AI connection will be added next."
-                )
-            }
+            chatText.append("ChatGPT Mini: Gemini connection coming next...\n")
         }
-    }
-
-    private fun addMessage(sender: String, message: String) {
-        val textView = TextView(this)
-
-        textView.text = "$sender:\n$message"
-        textView.textSize = 16f
-        textView.setPadding(20, 15, 20, 15)
-
-        chatBox.addView(textView)
     }
 }
