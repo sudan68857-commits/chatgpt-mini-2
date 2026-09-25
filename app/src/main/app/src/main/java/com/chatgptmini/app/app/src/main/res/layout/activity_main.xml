@@ -5,56 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#111827">
+    android:padding="16dp">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:gravity="center_vertical"
-        android:paddingStart="20dp"
-        android:text="ChatGPT Mini 2.0"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <ScrollView
+        android:id="@+id/chatText"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:fillViewport="true">
+        android:text="ChatGPT Mini\n\nHello! 👋"
+        android:textSize="18sp"
+        android:padding="8dp" />
 
-        <LinearLayout
-            android:id="@+id/chatBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="12dp" />
-
-    </ScrollView>
-
-    <LinearLayout
+    <EditText
+        android:id="@+id/messageInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:orientation="horizontal">
+        android:hint="Type your message..."
+        android:inputType="textMultiLine"
+        android:maxLines="4" />
 
-        <EditText
-            android:id="@+id/input"
-            android:layout_width="0dp"
-            android:layout_height="55dp"
-            android:layout_weight="1"
-            android:hint="Message Mini..."
-            android:padding="12dp"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#9CA3AF"
-            android:background="#1F2937" />
-
-        <Button
-            android:id="@+id/sendButton"
-            android:layout_width="60dp"
-            android:layout_height="55dp"
-            android:text="➤" />
-
-    </LinearLayout>
+    <Button
+        android:id="@+id/sendButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send" />
 
 </LinearLayout>
